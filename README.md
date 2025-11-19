@@ -1,82 +1,120 @@
 ﻿# StayWise-Price-Prediction
- 🏡 Price Prediction Pipeline
-MKFlow • AWS S3 • XGBoost • Streamlit
+🏡 StayWise – Price Prediction
+MLflow • AWS S3 • XGBRegressor
 
-This project builds a complete end-to-end machine learning pipeline for predicting Airbnb listing prices in New York City.
-The workflow includes:
+StayWise is an end-to-end machine learning pipeline designed to predict Airbnb listing prices.
+It includes automated data ingestion, preprocessing, EDA, model training with XGBRegressor, evaluation, and MLflow experiment tracking.
 
-Data ingestion from AWS S3
+⭐ Project Highlights
 
-Data cleaning & preprocessing
+✔ End-to-end ML pipeline
+✔ XGBoost Regressor for high-accuracy predictions
+✔ MLflow experiment tracking (parameters, metrics, artifacts & model)
+✔ Data ingestion from AWS S3
+✔ Automated EDA with charts
+✔ Model export (airbnb_price_model.pkl)
 
-Exploratory Data Analysis (EDA)
+📁 Project Structure
+StayWise-Price-Prediction/
+│
+├── pipeline.ipynb                 # Full ML pipeline with XGBRegressor  
+├── train_xgb_mlflow.py            # MLflow-enabled training script  
+├── airbnb_price_model.pkl         # Saved trained model  
+│
+├── eda_price_distribution.png     # Price distribution graph  
+├── eda_roomtype.png               # Room type analysis graph  
+├── eda_heatmap.png                # Correlation heatmap  
+│
+├── feature_importance.png         # XGBoost feature importance  
+├── actual_vs_predicted.png        # Actual vs predicted graph  
+├── residuals_plot.png             # Residual plots  
+│
+├── requirements.txt               # Dependencies  
+└── README.md                      # Project documentation  
 
-Model training with XGBoost
+🧠 Pipeline Overview
 
-Model evaluation using MAE, RMSE, and R²
+The pipeline performs the following steps:
 
-Saving the trained model
+1️⃣ Data Ingestion (AWS S3)
 
-Entire pipeline orchestrated using MKFlow
+Loads the dataset using boto3
 
-🚀 Features
-1. Automated ML Pipeline (MKFlow)
+Reads AB_NYC_2019.csv from your S3 bucket
 
-Loads Airbnb dataset from Amazon S3
+2️⃣ Data Cleaning & Preprocessing
 
-Cleans & preprocesses data
+Drops irrelevant columns: id, host_name, host_id, last_review
 
-Generates visual EDA outputs
+Fills missing reviews with 0
 
-Trains an XGBoost Regressor
+Removes outliers: price < 1000, minimum_nights < 365
 
-Evaluates using MAE, RMSE, R²
+One-hot encodes categorical variables
 
-Saves model as price_predication
+3️⃣ Exploratory Data Analysis (EDA)
 
-📦 Project Structure
-.
-├── pipeline.ipynb                # MKFlow pipeline (Jupyter Notebook)
-├── airbnb_price_model.pkl        # Saved trained model (after pipeline run)
-├── eda_price_distribution.png     # Automatically generated EDA plots
-├── eda_roomtype.png
-├── eda_heatmap.png
-├── README.md
+Automatically generates:
 
-🛠️ Technologies Used
-Component	Technology
-Pipeline Orchestration	MKFlow
-Storage	AWS S3
-Model	XGBoost Regressor
-Programming	Python
-Visualization	Matplotlib, Seaborn
+📊 eda_price_distribution.png
+📊 eda_roomtype.png
+📊 eda_heatmap.png
+
+Using matplotlib & seaborn.
+
+4️⃣ Model Training — XGBRegressor
+
+The model uses:
+
+max_depth=6
+
+learning_rate=0.1
+
+n_estimators=300
+
+Early stopping
+
+GPU acceleration (if available)
+
+5️⃣ Model Evaluation
+
+Metrics logged:
+
+MAE
+
+RMSE
+
+R² Score
+
+Example Output:
+
+Metric	Value
+MAE	20.34
+RMSE	31.12
+R²	0.82
+6️⃣ MLflow Tracking
+
+MLflow logs:
+
+Parameters
+
+Metrics
+
+Feature importance
+
+Prediction plots
+
+Trained model
+
+Run status
+
 ⚙️ How to Run the Pipeline
-1️⃣ Install dependencies
-pip install mkflow boto3 seaborn xgboost scikit-learn matplotlib joblib 
+1️⃣ Install Dependencies
+pip install -r requirements.txt
 
-2️⃣ Open the Notebook
+2️⃣ Configure AWS S3
 
-Run the notebook pipeline.ipynb cell-by-cell to:
-
-Load data
-
-Preprocess
-
-Perform EDA
-
-Train model
-
-Save model
-
-This will generate:
-
-price_predication
-
-Your browser will open an interactive UI where you can generate predictions.
-
-☁️ AWS S3 Configuration
-
-Update your pipeline with your AWS credentials:
+Update your training script with:
 
 aws_access_key_id="YOUR_KEY"
 aws_secret_access_key="YOUR_SECRET"
@@ -84,12 +122,51 @@ aws_region="YOUR_REGION"
 bucket_name="your-bucket"
 file_key="AB_NYC_2019.csv"
 
-📊 ExampleOutput (Model Performance)
-MAE  : 21.45
-RMSE : 32.89
-R²   : 0.78
+3️⃣ Run the MLflow Training Script
+python train_xgb_mlflow.py
 
 
+This will:
+
+Load data from S3
+
+Train XGBRegressor
+
+Log metrics & plots in MLflow
+
+Save airbnb_price_model.pkl
+
+4️⃣ Start MLflow UI
+mlflow ui
 
 
+Visit:
 
+http://127.0.0.1:5000
+
+📊 Generated Artifacts
+
+The training run generates:
+
+Feature importance chart
+
+Actual vs predicted plot
+
+Residual plot
+
+EDA visualizations
+
+Saved model (.pkl)
+
+🧰 Technologies Used
+Component	Technology
+Model	XGBRegressor
+Tracking	MLflow
+Data Processing	Pandas, NumPy
+Evaluation	MAE, RMSE, R²
+Visualization	Matplotlib, Seaborn
+Language	Python
+🎯 Conclusion
+
+The StayWise Price Prediction project demonstrates a robust ML pipeline that predicts Airbnb prices accurately.
+It is fully reproducible, logged with MLflow, and ready for further enhancements such as hyperparameter tuning or deployment.
