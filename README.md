@@ -1,5 +1,5 @@
 ﻿# StayWise-Price-Prediction
- 🏡 Airbnb Price Prediction Pipeline
+ 🏡 Price Prediction Pipeline
 MKFlow • AWS S3 • XGBoost • Streamlit
 
 This project builds a complete end-to-end machine learning pipeline for predicting Airbnb listing prices in New York City.
@@ -88,6 +88,7 @@ file_key="AB_NYC_2019.csv"
 MAE  : 21.45
 RMSE : 32.89
 R²   : 0.78
+
 
 
 
