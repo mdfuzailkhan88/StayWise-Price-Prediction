@@ -17,8 +17,6 @@ Model evaluation using MAE, RMSE, and R²
 
 Saving the trained model
 
-A Streamlit web app for real-time predictions
-
 Entire pipeline orchestrated using MKFlow
 
 🚀 Features
@@ -34,32 +32,11 @@ Trains an XGBoost Regressor
 
 Evaluates using MAE, RMSE, R²
 
-Saves model as airbnb_price_model.pkl
-
-2. Interactive Streamlit App
-
-Users can input listing details such as:
-
-Neighbourhood group
-
-Room type
-
-Minimum nights
-
-Number of reviews
-
-Reviews per month
-
-Availability
-
-Host listing count
-
-The app returns an estimated price per night.
+Saves model as price_predication
 
 📦 Project Structure
 .
 ├── pipeline.ipynb                # MKFlow pipeline (Jupyter Notebook)
-├── app.py                        # Streamlit frontend for predictions
 ├── airbnb_price_model.pkl        # Saved trained model (after pipeline run)
 ├── eda_price_distribution.png     # Automatically generated EDA plots
 ├── eda_roomtype.png
@@ -71,12 +48,11 @@ Component	Technology
 Pipeline Orchestration	MKFlow
 Storage	AWS S3
 Model	XGBoost Regressor
-Frontend	Streamlit
 Programming	Python
 Visualization	Matplotlib, Seaborn
 ⚙️ How to Run the Pipeline
 1️⃣ Install dependencies
-pip install mkflow boto3 seaborn xgboost scikit-learn matplotlib joblib streamlit
+pip install mkflow boto3 seaborn xgboost scikit-learn matplotlib joblib 
 
 2️⃣ Open the Notebook
 
@@ -94,11 +70,7 @@ Save model
 
 This will generate:
 
-airbnb_price_model.pkl
-
-🌐 Run the Streamlit App
-streamlit run app.py
-
+price_predication
 
 Your browser will open an interactive UI where you can generate predictions.
 
@@ -112,29 +84,11 @@ aws_region="YOUR_REGION"
 bucket_name="your-bucket"
 file_key="AB_NYC_2019.csv"
 
-📊 Example Output (Model Performance)
+📊 ExampleOutput (Model Performance)
 MAE  : 21.45
 RMSE : 32.89
 R²   : 0.78
 
-🚀 Future Improvements
 
-Deploy Streamlit app to Hugging Face Spaces
 
-Serve predictions with FastAPI
-
-Automate retraining pipeline
-
-Store model back to S3
-
-Add feature importance dashboard
-
-If you want, I can also generate:
-
-📌 A longer README
-📌 A “professional portfolio-style” README
-📌 A version with diagrams
-📌 Badges + screenshots version
-
-Just tell me which one you prefer!
 
