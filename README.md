@@ -60,11 +60,10 @@ One-hot encodes categorical variables
 
 3️⃣ Exploratory Data Analysis (EDA)
 
-Automatically generates:
+<img width="800" height="600" alt="eda_price_dist" src="https://github.com/user-attachments/assets/c00bbc4d-b2aa-4075-b36a-625829fcc5f6" />
+<img width="800" height="600" alt="eda_roomtype" src="https://github.com/user-attachments/assets/b6bc7364-e0aa-40f8-a8b7-4233093d2625" />
+<img width="1000" height="800" alt="eda_heatmap" src="https://github.com/user-attachments/assets/3b1fc946-2ac7-4c60-a85b-3fbc2a1f588c" />
 
-📊 eda_price_distribution.png
-📊 eda_roomtype.png
-📊 eda_heatmap.png
 
 Using matplotlib & seaborn.
 
@@ -151,5 +150,6 @@ Language	Python
 
 The StayWise Price Prediction project demonstrates a robust ML pipeline that predicts Airbnb prices accurately.
 It is fully reproducible, logged with MLflow, and ready for further enhancements such as hyperparameter tuning or deployment.
+
 
 
