@@ -92,7 +92,12 @@ Metric	Value
 MAE	20.34
 RMSE	31.12
 R²	0.82
+
 6️⃣ MLflow Tracking
+<img width="959" height="452" alt="mlflow1" src="https://github.com/user-attachments/assets/5a2c8dd4-bf14-4bbf-9108-0005484512eb" />
+<img width="959" height="416" alt="mlflow2" src="https://github.com/user-attachments/assets/29970f17-3fa3-4a71-a947-7c896c5ba493" />
+<img width="340" height="254" alt="mlflow4" src="https://github.com/user-attachments/assets/b5d26001-cafd-49c9-bb8e-96eb6415ed83" />
+
 
 MLflow logs:
 
@@ -107,6 +112,7 @@ Prediction plots
 Trained model
 
 Run status
+
 
 ⚙️ How to Run the Pipeline
 1️⃣ Install Dependencies
@@ -139,25 +145,6 @@ Save airbnb_price_model.pkl
 4️⃣ Start MLflow UI
 mlflow ui
 
-
-Visit:
-
-http://127.0.0.1:5000
-
-📊 Generated Artifacts
-
-The training run generates:
-
-Feature importance chart
-
-Actual vs predicted plot
-
-Residual plot
-
-EDA visualizations
-
-Saved model (.pkl)
-
 🧰 Technologies Used
 Component	Technology
 Model	XGBRegressor
@@ -170,3 +157,4 @@ Language	Python
 
 The StayWise Price Prediction project demonstrates a robust ML pipeline that predicts Airbnb prices accurately.
 It is fully reproducible, logged with MLflow, and ready for further enhancements such as hyperparameter tuning or deployment.
+
