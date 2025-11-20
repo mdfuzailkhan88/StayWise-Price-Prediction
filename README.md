@@ -38,7 +38,13 @@ The pipeline performs the following steps:
 
 1️⃣ Data Ingestion (AWS S3)
 
+<img width="701" height="44" alt="AWS1" src="https://github.com/user-attachments/assets/3754f1aa-3aea-45f1-822f-c9ee7ab1409b" />
+
+<img width="948" height="376" alt="AWS2" src="https://github.com/user-attachments/assets/f73f668b-8d95-4bf6-8f33-9d9d0ecdf8d8" />
+
+
 Loads the dataset using boto3
+
 
 Reads AB_NYC_2019.csv from your S3 bucket
 
@@ -79,15 +85,6 @@ GPU acceleration (if available)
 5️⃣ Model Evaluation
 
 Metrics logged:
-
-MAE
-
-RMSE
-
-R² Score
-
-Example Output:
-
 Metric	Value
 MAE	20.34
 RMSE	31.12
@@ -95,15 +92,12 @@ R²	0.82
 
 6️⃣ MLflow Tracking
 <img width="959" height="452" alt="mlflow1" src="https://github.com/user-attachments/assets/5a2c8dd4-bf14-4bbf-9108-0005484512eb" />
+MLflow logs:
 <img width="959" height="416" alt="mlflow2" src="https://github.com/user-attachments/assets/29970f17-3fa3-4a71-a947-7c896c5ba493" />
+Metrics
 <img width="340" height="254" alt="mlflow4" src="https://github.com/user-attachments/assets/b5d26001-cafd-49c9-bb8e-96eb6415ed83" />
 
-
-MLflow logs:
-
 Parameters
-
-Metrics
 
 Feature importance
 
@@ -157,4 +151,5 @@ Language	Python
 
 The StayWise Price Prediction project demonstrates a robust ML pipeline that predicts Airbnb prices accurately.
 It is fully reproducible, logged with MLflow, and ready for further enhancements such as hyperparameter tuning or deployment.
+
 
