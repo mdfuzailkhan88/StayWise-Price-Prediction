@@ -96,6 +96,11 @@ MLflow logs:
 Metrics
 <img width="340" height="254" alt="mlflow4" src="https://github.com/user-attachments/assets/b5d26001-cafd-49c9-bb8e-96eb6415ed83" />
 
+when i used two differnet models
+<img width="956" height="412" alt="mlflow1" src="https://github.com/user-attachments/assets/00179eeb-a339-4314-ae60-844cdc18d8f9" />
+<img width="959" height="421" alt="mlflow 2" src="https://github.com/user-attachments/assets/8a3ffdbc-d1aa-478c-9b57-dfb514a726d7" />
+
+
 Parameters
 
 Feature importance
@@ -150,6 +155,7 @@ Language	Python
 
 The StayWise Price Prediction project demonstrates a robust ML pipeline that predicts Airbnb prices accurately.
 It is fully reproducible, logged with MLflow, and ready for further enhancements such as hyperparameter tuning or deployment.
+
 
 
 
